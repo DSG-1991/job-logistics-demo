@@ -40,3 +40,85 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── CSS CUSTOM PROPERTIES (enables Tailwind hover on dark surfaces) ── */
+:root {
+  --jl-dark: #1A1A1A;
+  --jl-mid: #2D2D2D;
+  --jl-charcoal: #343434;
+  --jl-orange: #F6A500;
+  --jl-orange-dark: #D48C00;
+  --jl-border: rgba(255,255,255,0.08);
+}
+
+/* ── KEYFRAMES ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes driftGrid {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 60px; }
+}
+@keyframes pulseCta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(246,165,0,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(246,165,0,0.18); }
+}
+
+/* ── ANIMATE-IN SYSTEM ─────────────────────────────────── */
+.animate-ready   { opacity: 0; transform: translateY(24px); }
+.animate-visible { animation: fadeUp 500ms cubic-bezier(0.16,1,0.3,1) forwards; }
+.animate-scale-ready   { opacity: 0; transform: scale(0.94); }
+.animate-scale-visible { animation: scaleIn 450ms cubic-bezier(0.34,1.56,0.64,1) forwards; }
+.animate-slide-ready   { opacity: 0; transform: translateX(-20px); }
+.animate-slide-visible { animation: slideInLeft 400ms cubic-bezier(0.16,1,0.3,1) forwards; }
+
+.delay-80  { animation-delay:  80ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-350 { animation-delay: 350ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── INTERACTION UTILITIES ─────────────────────────────── */
+.card-lift-dark {
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 200ms ease;
+  cursor: pointer;
+}
+.card-lift-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  border-color: rgba(246,165,0,0.5) !important;
+}
+
+.pulse-cta-dark {
+  animation: pulseCta 2.4s ease-in-out infinite;
+}
+
+/* ── DRIFT GRID ────────────────────────────────────────── */
+.drift-grid {
+  animation: driftGrid 24s linear infinite;
+}
+
+/* ── REDUCED MOTION ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ready, .animate-scale-ready, .animate-slide-ready {
+    opacity: 1; transform: none;
+  }
+  .animate-visible, .animate-scale-visible, .animate-slide-visible {
+    animation: none; opacity: 1; transform: none;
+  }
+  .drift-grid, .pulse-cta-dark { animation: none; }
+  .card-lift-dark { transition: none; }
+}
