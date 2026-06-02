@@ -1,0 +1,310 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight, Star, Award, Shield, Clock, Phone, Truck, Recycle, Package, Leaf, CheckCircle, ChevronRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Waste Removal, Skip Hire & Landscape Supplies Blackpool | Job Logistics',
+  description: "Job Logistics Ltd — Blackpool's award-winning waste removal, recycling centre drop-off, skip hire and landscape supplies. 14+ years. Call 01253 963109.",
+};
+
+const services = [
+  {
+    href: '/drop-off',
+    icon: Recycle,
+    label: 'Recycling Centre Drop-Off',
+    desc: 'Drive in, get weighed, pay and go. Weight-based pricing. Open Mon–Sat 9am–4pm.',
+    tag: 'From £72',
+    large: true,
+  },
+  {
+    href: '/skip-hire',
+    icon: Package,
+    label: 'Skip Hire',
+    desc: 'Same-day delivery across Blackpool and the Fylde. All sizes, all waste types.',
+    tag: 'Get a quote',
+    large: false,
+  },
+  {
+    href: '/trade-waste',
+    icon: Truck,
+    label: 'Trade & Commercial Waste',
+    desc: 'Builders, contractors, landlords — large volumes, scheduled collections, licensed disposal.',
+    tag: 'Trade pricing',
+    large: false,
+  },
+  {
+    href: '/landscape-supplies',
+    icon: Leaf,
+    label: 'Landscape Supplies',
+    desc: 'Stone, aggregates, fence panels and turf delivered across Blackpool. From £30.',
+    tag: 'From £30 delivered',
+    large: false,
+  },
+];
+
+const reviews = [
+  { name: 'Mark R.', loc: 'Blackpool', date: 'April 2026', text: 'Used them for a full garage clear. Turned up on time, worked fast, left the place spotless. Brilliant service and very fair pricing.' },
+  { name: 'Julie T.', loc: 'Lytham', date: 'February 2026', text: 'Ordered landscape stone and they delivered next day. Exactly what was described. Will be using again for the rest of the garden project.' },
+  { name: 'Craig N.', loc: 'Bispham', date: 'March 2026', text: 'Best in Blackpool for rubbish removal. Quick, professional, no messing. Used them three times now and they never let me down.' },
+];
+
+const faqs = [
+  { q: 'What is the difference between drop-off and collection?', a: 'Drop-off means you drive your waste to our recycling centre (open Mon–Sat 9–4, Unit 1 Dickies Lane South). Collection means we come to your property. For domestic collection, visit blackpoolrecycling.uk. For trade collection, call us on 01253 963109.' },
+  { q: 'Do you accept trade and commercial waste at the drop-off centre?', a: 'Yes — unlike the council HWRC, we accept commercial, trade, builder and landlord waste. All volumes welcome. Large contractor loads should call ahead.' },
+  { q: 'How quickly can you deliver a skip?', a: 'Same-day delivery is available for most of Blackpool and the Fylde. Call us before noon and we aim to have a skip with you the same afternoon.' },
+  { q: 'Can I order landscape supplies online?', a: 'Call us on 01253 963109 or use the contact form to order stone, aggregates, fence panels or turf. Delivery from £30 across Blackpool and Fylde.' },
+];
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  name: 'Job Logistics Ltd',
+  url: 'https://www.joblogisticsltd.co.uk',
+  telephone: '+441253963109',
+  email: 'joblogisticsltd@gmail.com',
+  address: { '@type': 'PostalAddress', streetAddress: 'Unit 1, Dickies Lane South', addressLocality: 'Blackpool', postalCode: 'FY4 5LG', addressCountry: 'GB' },
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '09:00', closes: '16:00' }],
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '381' },
+};
+
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
+
+export default function HomePage() {
+  const dark = '#1A1A1A'; const mid = '#2D2D2D'; const charcoal = '#343434'; const orange = '#F6A500'; const orangeDark = '#D48C00'; const borderD = 'rgba(255,255,255,0.08)';
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* ── HERO — Recognition → Pain → Desire (PAS) */}
+      <section style={{ background: dark, borderBottom: `1px solid ${borderD}`, position: 'relative', overflow: 'hidden' }}>
+        {/* Grid overlay — industrial signature */}
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.03, backgroundImage: 'linear-gradient(rgba(246,165,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(246,165,0,1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-28">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded mb-6 text-xs font-bold tracking-widest uppercase" style={{ background: 'rgba(246,165,0,0.12)', border: `1px solid ${orange}33`, color: orange }}>
+            <Award size={12} /> Award-winning · 14+ years · Blackpool
+          </div>
+          <h1 className="font-bold leading-[1.0] tracking-tight mb-5 max-w-3xl" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', color: '#FFFFFF' }}>
+            Every waste job in Blackpool.<br /><span style={{ color: orange }}>One company. Done properly.</span>
+          </h1>
+          <p className="text-lg leading-relaxed mb-8 max-w-2xl" style={{ color: '#C8C8C8' }}>
+            Drop your waste off at our recycling centre, hire a skip for tomorrow, get your builder&apos;s rubble cleared by a licensed contractor, or order landscape stone delivered to your drive. <strong style={{ color: '#fff' }}>One call. Everything sorted.</strong>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 font-bold px-8 py-4 rounded transition-colors text-base" style={{ background: orange, color: dark }}>
+              Get a free quote <ArrowRight size={18} />
+            </Link>
+            <a href="tel:01253963109" className="inline-flex items-center justify-center gap-2 font-semibold px-8 py-4 rounded transition-colors text-base" style={{ border: `1px solid ${borderD}`, color: '#fff', background: 'transparent' }}>
+              <Phone size={16} /> 01253 963109
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TRUST BAR — orange background (signature: never used on blackpoolrecycling.uk) */}
+      <section style={{ background: orange }}>
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-center gap-x-8 gap-y-2">
+          {[
+            { icon: Star, label: '381 Google reviews' },
+            { icon: Award, label: 'Best Junk Removal Blackpool 2024' },
+            { icon: Award, label: 'Local Labour & Trade Award 2025' },
+            { icon: Shield, label: 'Waste Carrier CBDU77935' },
+            { icon: Clock, label: 'Same-day available' },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-2 text-sm font-bold" style={{ color: dark }}>
+              <Icon size={14} />{label}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SERVICES BENTO GRID — Step 5: Belief */}
+      <section style={{ background: dark, padding: '4rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: orange }}>Everything we do</p>
+          <h2 className="font-bold mb-10" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: '#fff' }}>
+            Four services. One yard. Blackpool&apos;s most complete waste &amp; supplies operation.
+          </h2>
+          {/* Bento grid — visually distinct from blackpoolrecycling uniform cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Large card */}
+            <Link href={services[0].href} className="lg:col-span-2 group block rounded p-6 transition-all hover:scale-[1.01]" style={{ background: charcoal, border: `1px solid ${borderD}` }}>
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded flex items-center justify-center" style={{ background: orange }}>
+                  {(() => { const I = services[0].icon; return <I size={24} color={dark} />; })()}
+                </div>
+                <span className="text-xs font-bold px-2 py-1 rounded" style={{ background: 'rgba(246,165,0,0.15)', color: orange }}>{services[0].tag}</span>
+              </div>
+              <h3 className="font-bold mb-2 text-xl" style={{ fontFamily: 'var(--font-barlow-condensed)', color: '#fff' }}>{services[0].label}</h3>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: '#C8C8C8' }}>{services[0].desc}</p>
+              <span className="inline-flex items-center gap-1 text-sm font-bold transition-colors" style={{ color: orange }}>
+                Find out more <ChevronRight size={14} />
+              </span>
+            </Link>
+            {/* Small cards */}
+            {services.slice(1).map(svc => (
+              <Link key={svc.href} href={svc.href} className="group block rounded p-5 transition-all hover:scale-[1.01]" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                <div className="flex items-start justify-between mb-3">
+                  <div className="w-10 h-10 rounded flex items-center justify-center" style={{ background: 'rgba(246,165,0,0.12)', border: `1px solid ${orange}33` }}>
+                    {(() => { const I = svc.icon; return <I size={20} color={orange} />; })()}
+                  </div>
+                  <span className="text-xs font-bold px-2 py-1 rounded" style={{ background: 'rgba(246,165,0,0.1)', color: orange }}>{svc.tag}</span>
+                </div>
+                <h3 className="font-bold mb-1.5 text-base" style={{ fontFamily: 'var(--font-barlow-condensed)', color: '#fff' }}>{svc.label}</h3>
+                <p className="text-xs leading-relaxed mb-3" style={{ color: '#C8C8C8' }}>{svc.desc}</p>
+                <span className="inline-flex items-center gap-1 text-xs font-bold" style={{ color: orange }}>
+                  Learn more <ChevronRight size={12} />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW DROP-OFF WORKS — Step 6: Safety */}
+      <section style={{ background: charcoal, padding: '4rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: orange }}>Recycling centre</p>
+              <h2 className="font-bold mb-4" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', color: '#fff' }}>
+                Drive in, drop off.<br />Five minutes and you&apos;re done.
+              </h2>
+              <p className="text-sm leading-relaxed mb-6" style={{ color: '#C8C8C8' }}>
+                No booking. No appointment. Pull in to our yard on Dickies Lane South, get your vehicle weighed in and out, pay the exact weight at our counter. Open Monday to Saturday, 9am to 4pm.
+              </p>
+              <Link href="/drop-off" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded text-sm transition-colors" style={{ background: orange, color: dark }}>
+                Drop-off pricing &amp; details <ArrowRight size={16} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { n: '01', title: 'Drive in', desc: 'No booking needed. Pull up at the entrance and we direct you.' },
+                { n: '02', title: 'Get weighed', desc: 'Vehicle weighed in and out. You pay only for what you leave.' },
+                { n: '03', title: 'Pay & go', desc: 'Pay at the counter — card or cash. Digital receipt issued.' },
+              ].map(({ n, title, desc }) => (
+                <div key={n} className="rounded p-4" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                  <div className="text-3xl font-extrabold mb-2 leading-none" style={{ color: `${orange}30`, fontFamily: 'var(--font-barlow-condensed)' }}>{n}</div>
+                  <h3 className="font-bold text-sm mb-1" style={{ color: '#fff', fontFamily: 'var(--font-barlow-condensed)' }}>{title}</h3>
+                  <p className="text-xs leading-relaxed" style={{ color: '#888' }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRICING STRIP — Step 8: Logic */}
+      <section style={{ background: dark, padding: '4rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: orange }}>Pricing</p>
+          <h2 className="font-bold mb-8" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', color: '#fff' }}>
+            Transparent pricing. Agreed before we start.
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+            {[
+              { label: '15-min / single item', price: '£72' },
+              { label: '¼ load collection', price: '£120' },
+              { label: '½ load collection', price: '£180' },
+              { label: '¾ load collection', price: '£230' },
+              { label: 'Full load', price: '£325' },
+            ].map(row => (
+              <div key={row.label} className="rounded p-4 text-center" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                <div className="text-2xl font-extrabold mb-1" style={{ color: orange, fontFamily: 'var(--font-barlow-condensed)' }}>{row.price}</div>
+                <div className="text-xs leading-tight" style={{ color: '#C8C8C8' }}>{row.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs mb-6" style={{ color: '#888' }}>All prices include labour and VAT. Specialist materials (plasterboard £295, green waste £180, timber £220, hardcore £120) priced separately.</p>
+          <Link href="/drop-off" className="inline-flex items-center gap-2 text-sm font-bold transition-colors" style={{ color: orange }}>
+            Full pricing at the recycling centre <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
+      {/* ── WHY JOB LOGISTICS — Step 4-5: Trust + Belief */}
+      <section style={{ background: charcoal, padding: '4rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Award, stat: '14+', label: 'Years serving Blackpool', sub: 'Local, trusted, established' },
+              { icon: Star, stat: '381', label: 'Five-star Google reviews', sub: '100% recommend on Facebook' },
+              { icon: Award, stat: '3', label: 'Industry awards won', sub: 'Local and national recognition' },
+              { icon: Shield, stat: '100%', label: 'Licensed & compliant', sub: 'Safe Trader · CBDU77935' },
+            ].map(({ icon: Icon, stat, label, sub }) => (
+              <div key={label} className="rounded p-5" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                <Icon size={20} color={orange} className="mb-3" />
+                <div className="text-3xl font-extrabold mb-1" style={{ color: '#fff', fontFamily: 'var(--font-barlow-condensed)' }}>{stat}</div>
+                <div className="text-sm font-bold mb-1" style={{ color: '#fff' }}>{label}</div>
+                <div className="text-xs" style={{ color: '#888' }}>{sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── REVIEWS — Step 4: Trust continued */}
+      <section style={{ background: dark, padding: '4rem 0' }}>
+        <div className="max-w-7xl mx-auto px-4">
+          <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: orange }}>Google reviews</p>
+          <h2 className="font-bold mb-8" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', color: '#fff' }}>
+            What Blackpool says
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {reviews.map(r => (
+              <div key={r.name} className="rounded p-5" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} size={13} fill={orange} color={orange} />)}</div>
+                <p className="text-sm leading-relaxed mb-4 italic" style={{ color: '#C8C8C8' }}>&ldquo;{r.text}&rdquo;</p>
+                <div className="flex justify-between text-xs" style={{ color: '#888' }}>
+                  <span className="font-bold" style={{ color: '#C8C8C8' }}>{r.name}, {r.loc}</span>
+                  <span>{r.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ — Step 6-8: Safety → Logic */}
+      <section style={{ background: charcoal, padding: '4rem 0' }}>
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="font-bold mb-8 text-center" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(1.6rem, 3.5vw, 2.2rem)', color: '#fff' }}>
+            Common questions
+          </h2>
+          <div className="space-y-2">
+            {faqs.map(f => (
+              <details key={f.q} className="group rounded" style={{ background: mid, border: `1px solid ${borderD}` }}>
+                <summary className="flex items-center justify-between px-5 py-4 cursor-pointer font-bold text-sm list-none" style={{ color: '#fff' }}>
+                  {f.q}
+                  <ChevronRight size={16} color={orange} className="shrink-0 transition-transform group-open:rotate-90" />
+                </summary>
+                <div className="px-5 pb-4 text-sm leading-relaxed" style={{ color: '#C8C8C8', borderTop: `1px solid ${borderD}`, paddingTop: '0.75rem' }}>{f.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FINAL CTA — Step 9: Decision */}
+      <section style={{ background: orange, padding: '4rem 0' }}>
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="font-bold mb-3" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: 'clamp(2rem, 5vw, 3rem)', color: dark }}>
+            Ready to get it sorted?
+          </h2>
+          <p className="mb-8 text-base" style={{ color: '#333' }}>
+            Call us or request a quote — we respond the same day. No obligation, no hard sell.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/contact" className="inline-flex items-center gap-2 font-bold px-8 py-4 rounded transition-colors text-base" style={{ background: dark, color: '#fff' }}>
+              Get a free quote <ArrowRight size={18} />
+            </Link>
+            <a href="tel:01253963109" className="inline-flex items-center gap-2 font-bold px-8 py-4 rounded transition-colors text-base" style={{ background: orangeDark, color: '#fff' }}>
+              <Phone size={16} /> 01253 963109
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
