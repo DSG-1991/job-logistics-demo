@@ -22,12 +22,12 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.joblogisticsltd.co.uk'),
   title: {
-    default: 'Waste Removal, Skip Hire & Landscape Supplies Blackpool | Job Logistics',
-    template: '%s | Job Logistics Ltd',
+    default: 'Waste Removal, Skip Hire & Landscape Supplies Blackpool | Blackpool Recycling',
+    template: '%s | Blackpool Recycling',
   },
   description:
-    "Job Logistics Ltd — Blackpool's award-winning waste removal, recycling centre, skip hire and landscape supplies. 14+ years. Licensed. Call 01253 963109.",
-  openGraph: { siteName: 'Job Logistics Ltd', locale: 'en_GB', type: 'website' },
+    "Blackpool Recycling — Blackpool's award-winning waste removal, recycling centre, skip hire and landscape supplies. 14+ years. Licensed. Call 01253 963109.",
+  openGraph: { siteName: 'Blackpool Recycling', locale: 'en_GB', type: 'website' },
 };
 
 const footerServices = [
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
           <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-bold text-lg mb-4" style={{ color: '#F6A500', fontFamily: 'var(--font-barlow-condensed)' }}>Job Logistics Ltd</h3>
+              <h3 className="font-bold text-lg mb-4" style={{ color: '#F6A500', fontFamily: 'var(--font-barlow-condensed)' }}>Blackpool Recycling</h3>
               <address className="not-italic space-y-2 text-sm" style={{ color: '#C8C8C8' }}>
                 <p>Unit 1, Dickies Lane South<br />Blackpool, Lancashire, FY4 5LG</p>
                 <div className="flex items-center gap-2">
@@ -105,7 +105,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs" style={{ color: '#888' }}>
-              <p>© 2026 Job Logistics Ltd · Company No. 08012575 · VAT GB286668834</p>
+              <p>© 2026 Blackpool Recycling · Company No. 08012575 · VAT GB286668834</p>
               <p>Registered in England &amp; Wales · Licensed Waste Carrier CBDU77935</p>
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function Header() {
         <Link href="/" className="shrink-0">
           <Image
             src="/logo.png"
-            alt="Job Logistics Ltd"
+            alt="Blackpool Recycling"
             width={200}
             height={50}
             className="h-10 w-auto"

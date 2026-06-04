@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Phone, ArrowRight, Truck, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Landscape Supplies Blackpool | Stone, Aggregates, Fencing, Turf | Job Logistics',
+  title: 'Landscape Supplies Blackpool | Stone, Aggregates, Fencing, Turf | Blackpool Recycling',
   description: 'Landscape supplies delivered across Blackpool and the Fylde. Stone, aggregates, fence panels and turf from £30. Call 01253 963109 to order.',
 };
 

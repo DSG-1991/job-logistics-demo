@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CheckCircle, Phone, ArrowRight, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Skip Hire Blackpool | Same-Day Delivery | Job Logistics',
+  title: 'Skip Hire Blackpool | Same-Day Delivery | Blackpool Recycling',
   description: 'Skip hire in Blackpool and the Fylde Coast. Same-day delivery available. All sizes. Licensed disposal. Call 01253 963109 for an instant quote.',
 };
 

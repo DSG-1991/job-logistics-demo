@@ -6,8 +6,8 @@ import CountUp from '@/app/components/CountUp';
 import Accordion from '@/app/components/Accordion';
 
 export const metadata: Metadata = {
-  title: 'Waste Removal, Skip Hire & Landscape Supplies Blackpool | Job Logistics',
-  description: "Job Logistics Ltd — Blackpool's award-winning waste removal, recycling centre drop-off, skip hire and landscape supplies. 14+ years. Licensed. Call 01253 963109.",
+  title: 'Waste Removal, Skip Hire & Landscape Supplies Blackpool | Blackpool Recycling',
+  description: "Blackpool Recycling — Blackpool's award-winning waste removal, recycling centre drop-off, skip hire and landscape supplies. 14+ years. Licensed. Call 01253 963109.",
 };
 
 const services = [
@@ -32,7 +32,7 @@ const faqs = [
 
 const localBusinessSchema = {
   '@context': 'https://schema.org', '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
-  name: 'Job Logistics Ltd', url: 'https://www.joblogisticsltd.co.uk', telephone: '+441253963109',
+  name: 'Blackpool Recycling', url: 'https://www.joblogisticsltd.co.uk', telephone: '+441253963109',
   address: { '@type': 'PostalAddress', streetAddress: 'Unit 1, Dickies Lane South', addressLocality: 'Blackpool', postalCode: 'FY4 5LG', addressCountry: 'GB' },
   openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '09:00', closes: '16:00' }],
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '381' },

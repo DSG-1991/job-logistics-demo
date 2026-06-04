@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CheckCircle, X, Phone, Truck, Building, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Trade & Commercial Waste Blackpool | Builders, Contractors | Job Logistics',
+  title: 'Trade & Commercial Waste Blackpool | Builders, Contractors | Blackpool Recycling',
   description: 'Trade and commercial waste disposal in Blackpool. Builders, contractors, landlords, offices. Licensed carrier. Large volumes accepted. Drop-off or collection. Call 01253 963109.',
 };
 

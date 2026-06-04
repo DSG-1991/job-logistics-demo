@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CheckCircle, X, Clock, MapPin, Phone, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Recycling Centre Drop-Off Blackpool | Weight-Based | Job Logistics',
+  title: 'Recycling Centre Drop-Off Blackpool | Weight-Based | Blackpool Recycling',
   description: 'Drive-in waste drop-off at our Blackpool recycling centre. All waste types accepted. Weight-based pricing from £72. Open Mon–Sat 9am–4pm. FY4 5LG.',
 };
 
@@ -75,7 +75,7 @@ export default function DropOffPage() {
           <h2 className="font-bold mb-4" style={{ fontFamily: 'var(--font-barlow-condensed)', fontSize: '1.8rem', color: '#fff' }}>Getting here</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="rounded overflow-hidden" style={{ border: `1px solid ${borderD}`, aspectRatio: '4/3' }}>
-              <iframe title="Job Logistics recycling centre" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2355.25!2d-3.0209!3d53.7808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b41c2ea3a1d51%3A0x9d0e0e3b8a5c2b0!2sDickies%20Lane%20South%2C%20Blackpool%20FY4%205LG!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="100%" height="100%" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+              <iframe title="Blackpool Recycling recycling centre" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2355.25!2d-3.0209!3d53.7808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b41c2ea3a1d51%3A0x9d0e0e3b8a5c2b0!2sDickies%20Lane%20South%2C%20Blackpool%20FY4%205LG!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk" width="100%" height="100%" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>
             <div className="space-y-3 text-sm" style={{ color: '#C8C8C8' }}>
               <p><strong style={{ color: '#fff' }}>Address:</strong> Unit 1, Dickies Lane South, Blackpool, Lancashire, FY4 5LG</p>
